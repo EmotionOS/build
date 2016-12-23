@@ -229,13 +229,3 @@ def checkdeps(repo_path):
 
 ######## MAIN SCRIPT STARTS HERE ############
 
-reload_local_manifest()
-
-if not depsonly:
-    get_from_github(args.device)
-
-checkdeps("device/*/%s" % args.device)
-
-print("Checked dependency tree over : ")
-for repo in ran_checkdeps_on:
-    print("    %s" % repo)
