@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Copyright (C) 2012-16, The CyanogenMod Project
-# Copyright (C) 2016, Emotroid Team
+# Copyright (C) 2017, EmotionOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -129,11 +129,11 @@ def add_to_local_manifest(path, name, remote, branch=None):
             branch = "cm-14.1"
         if not (name.find("CyanogenMod/") == 0):
             name = "CyanogenMod/" + name
-    if (remote == "emotroid"):
+    if (remote == "emotion"):
         if (branch == None):
             branch = "nougat"
-        if not (name.find("Emotroid-Rom/") == 0):
-            name = "Emotroid-Rom/" + name
+        if not (name.find("EmotionOS/") == 0):
+            name = "EmotionOS/" + name
 
     if is_path_in_manifest(path, name, remote, branch):
         # Error messages are present in the called function, so just exit
@@ -162,7 +162,7 @@ def get_from_github(device):
         except:
             githubauth = None
 
-        githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:Emotroid-Rom+in:name+fork:true" % device)
+        githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:EmotionOS+in:name+fork:true" % device)
         if githubauth:
             githubreq.add_header("Authorization","Basic %s" % githubauth)
 
@@ -222,7 +222,7 @@ def checkdeps(repo_path):
                 try:
                     remote = dep['remote']
                 except:
-                    remote = "emotroid"
+                    remote = "emotion"
                 if add_to_local_manifest(dep['target_path'], dep['repository'], remote, branch):
                     reposync(dep['target_path'])
                 checkdeps(dep['target_path'])

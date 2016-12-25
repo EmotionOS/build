@@ -687,7 +687,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("*        \_____________________\     \         *");
   script.Print("*                               \     \        *");
   script.Print("*                                \_____\       *");
-  script.Print("*                         http://emotroid.com  *");
+  script.Print("*                       https://goo.gl/1ByphU  *");
   script.Print("************************************************");
 
   emotionv = GetBuildProp("ro.emotion.version", OPTIONS.info_dict)
