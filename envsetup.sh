@@ -690,9 +690,9 @@ function lunch()
     then
         # if we can't find a product, try to grab it off the Emotion github
         T=$(gettop)
-        pushd $T > /dev/null
+        cd $T > /dev/null
         build/tools/roomservice.py $device
-        popd > /dev/null
+        cd > /dev/null
         check_product $product
     else
         build/tools/roomservice.py -d $device
