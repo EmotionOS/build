@@ -33,6 +33,10 @@ print_build_config_vars += \
 endif
 endif
 
+ifneq ($(RECOVERY_VARIANT),)
+print_build_config_vars += \
+  RECOVERY_VARIANT
+endif
 ifeq ($(WITH_SU),true)
 print_build_config_vars += \
   WITH_SU
